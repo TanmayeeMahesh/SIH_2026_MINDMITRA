@@ -1,5 +1,7 @@
 # MindMitra — prototype
 
+**Live app: https://sih-2026-mindmitra.vercel.app** — open this on your phone, turn on airplane mode, it still works.
+
 Offline-first cognitive-activity and caregiver-support app for people living with mild-to-moderate dementia. SIH 2026, PS 26003.
 
 Planning, evidence and design decisions are in [`docs/`](docs/). Start with [`docs/README.md`](docs/README.md). For a full, verified-against-source walkthrough of everything below, see [`docs/20-technical-report.md`](docs/20-technical-report.md).
