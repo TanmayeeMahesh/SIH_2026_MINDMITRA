@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MindMitra — Voice-First AR Walking Navigation</title>
+  
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Mobile Web App & PWA Settings -->
+  <meta name="theme-color" content="#FBF1E3">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="/static/manifest.json">
+  <link rel="apple-touch-icon" href="/static/icons/icon-192.png">
+
+  <!-- MindMitra Styles (Earthy Northeast Theme) -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Top App Header: Simple User / Caretaker Segmented Control -->
+  <header class="app-header">
+    <div class="brand-badge">
+      <span class="brand-icon">🛰️</span>
+      <span class="brand-title">MindMitra</span>
+    </div>
+
+    <!-- Segmented Control: USER / CARETAKER -->
+    <div class="segmented-control" role="tablist" aria-label="Role Selection">
+      <button class="segment-btn active" id="tabElder" onclick="switchView('elder')" role="tab" aria-selected="true">
+        <span>🧓</span> User
+      </button>
+      <button class="segment-btn" id="tabCaregiver" onclick="switchView('caregiver')" role="tab" aria-selected="false">
+        <span>👨‍⚕️</span> Caretaker
+      </button>
+    </div>
+  </header>
+
+  <!-- Minimal Floating Toast for System Feedback -->
+  <div id="statusToast" class="status-toast hidden">
+    <div class="toast-spinner"></div>
+    <span id="statusToastText">Finding your live location...</span>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- VIEW 1: USER NAVIGATION FLOW (Extremely Simple, Voice-First)               -->
+  <!-- ========================================================================= -->
+  <main id="elderView" class="view-container active">
+
+    <!-- SCREEN 1: CHOOSE DESTINATION (Single Column Full Width, No Cutoff) -->
+    <section id="destinationSelectionScreen" class="dest-screen-container">
+      <div class="dest-card">
+        
+        <!-- Voice-First Prompt Header -->
+        <div class="voice-prompt-banner">
+          <div class="voice-mic-pulse" id="voiceMicIndicator">
+            <span class="mic-icon">🎙️</span>
+          </div>
+          <div class="voice-prompt-text">
+            <h2 class="voice-prompt-title">Where would you like to walk?</h2>
+            <p class="voice-prompt-subtitle">Speak naturally (e.g. <em>"Take me to D-Mart"</em>) or tap below:</p>
+          </div>
+        </div>
+
+        <!-- Single-Column Full-Width Destination Chips (Never clipped) -->
+        <div class="dest-chips-grid" id="elderDestList">
+          <!-- Populated dynamically via JavaScript with safe locations -->
+        </div>
+
+        <!-- Status & Reassurance Footer -->
+        <div class="dest-footer-note">
+          <span class="gps-dot">🟢</span>
+          <span id="homeGpsStatusText">Satellite GPS Active • Voice Guidance Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: VISIBLE NAVIGATION MAP (Map is Route Authority) -->
+    <section id="navigationMapScreen" class="nav-screen-container" style="display:none;">
+      
+      <!-- Top Minimal Info Strip -->
+      <div class="nav-map-top-bar">
+        <div class="nav-map-info">
+          <div class="nav-map-dest-name" id="mapDestName">Selected Destination</div>
+          <div class="nav-map-metrics" id="mapRouteMetrics">Calculating route...</div>
+        </div>
+        <button class="nav-exit-btn" id="btnCancelMapNav" onclick="window.patientNavigation && window.patientNavigation.cancelNavigation()" title="Cancel and choose another destination">
+          <span>✕</span> Exit
+        </button>
+      </div>
+
+      <!-- The Real Navigation Map Container -->
+      <div id="elderSatelliteMap" class="real-nav-map"></div>
+
+      <!-- Bottom Transition & Geofence Corridor Banner -->
+      <div class="nav-map-bottom-banner" id="mapBottomBanner">
+        <div class="corridor-indicator" id="mapCorridorStatus">
+          <span class="corridor-pulse"></span>
+          <span id="mapCorridorText">Safe walking corridor active</span>
+        </div>
+        <button class="start-ar-now-btn" id="btnTransitionARNow" onclick="window.patientNavigation && window.patientNavigation.showARNavigationScreen()">
+          <span>📷</span> Open 3D AR Camera
+        </button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: IMMERSIVE 3D AR LIVE CAMERA VIEW (AR Navigation) -->
+    <section id="arNavigationScreen" class="nav-screen-container" style="display:none;">
+      <div class="ar-viewport-stage" id="arStageWrapper">
+        
+        <!-- Real Live Camera Feed (Background) -->
+        <video id="liveCameraFeed" autoplay playsinline webkit-playsinline muted style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;"></video>
+
+        <!-- Real 3D WebGL AR Canvas (Foreground Overlay) -->
+        <canvas id="arCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:2; pointer-events:none;"></canvas>
+
+        <!-- Minimal Top Frosted Turn Banner (Direction, Maneuver, Distance) -->
+        <div class="ar-hud-minimal" id="arTopHUD">
+          <div class="ar-maneuver-badge" id="arManeuverIcon">▲</div>
+          <div class="ar-guidance-content">
+            <div class="ar-instruction-main" id="arTurnInstructionText">Follow the blue arrows forward.</div>
+            <div class="ar-metrics-sub" id="arTotalDistBadge">Starting walk...</div>
+          </div>
+        </div>
+
+        <!-- Tracking Advisory (Only displayed if tracking is limited) -->
+        <div id="arTrackingNotice" class="ar-tracking-notice hidden">
+          ⚠️ Move your phone slowly to improve tracking.
+        </div>
+
+        <!-- Directional Hint (Guides phone towards street if facing away) -->
+        <div id="arDirectionHint" class="ar-direction-hint hidden">
+          Turn right ➔ toward route
+        </div>
+
+        <!-- Fallback Tap-to-Enable Camera Prompt (Hidden when streaming actively) -->
+        <button id="cameraTapToStart" class="camera-tap-prompt hidden" onclick="window.cameraManager && window.cameraManager.startCamera()">
+          <span class="cam-icon">📷</span>
+          <span>Tap to Enable Camera</span>
+        </button>
+
+        <!-- Floating Expandable Mini-Map (Tap to switch to full map) -->
+        <div class="ar-pip-map-toggle" id="arPipMiniMap" title="Tap to view full navigation map" onclick="window.patientNavigation && window.patientNavigation.showNavigationMapScreen()">
+          <span class="pip-icon">🛰️</span>
+          <span class="pip-label">View Map</span>
+        </div>
+
+        <!-- Single Exit Action (Clean, Uncluttered) -->
+        <button class="ar-single-exit-btn" id="btnCancelNav" onclick="window.patientNavigation && window.patientNavigation.cancelNavigation()" title="Exit navigation">
+          <span>✕</span> Exit
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- VIEW 2: CARETAKER PORTAL (Preserved Caretaker Safety Dashboard)            -->
+  <!-- ========================================================================= -->
+  <main id="caregiverView" class="view-container">
+    <div class="caregiver-dashboard">
+      <div class="caregiver-header-card">
+        <div class="caregiver-title-group">
+          <h2>👨‍⚕️ Caretaker Safety Portal</h2>
+          <p>Real-time patient telemetry, corridor geofence monitoring, and remote safety oversight.</p>
+        </div>
+        <div class="corridor-status-pill safe" id="corridorHealthStatus">
+          <span>🟢</span> Patient Safe on Route
+        </div>
+      </div>
+
+      <div class="caregiver-grid">
+        <div class="caregiver-map-col">
+          <div class="caregiver-map-card">
+            <div class="card-header-bar">
+              <h3>🛰️ Patient Live Location & Corridor Map</h3>
+              <button class="map-action-btn" id="btnCenterPatient">📍 Focus Patient</button>
+            </div>
+            <div id="caregiverLiveMap"></div>
+          </div>
+        </div>
+
+        <div class="caregiver-side-col">
+          <div class="side-card">
+            <h3>📍 Safe Destinations</h3>
+            <div class="caregiver-dest-list" id="caregiverDestList"></div>
+            <button class="add-place-btn" id="btnAddSafeLocation">➕ Add Safe Location</button>
+          </div>
+
+          <div class="side-card">
+            <h3>🚨 Deviation Alerts</h3>
+            <div class="alerts-stream" id="caregiverAlertsStream">
+              <div class="empty-alerts">No active deviation alerts. Patient safe on corridor.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal: Add Safe Location (Caretaker) -->
+  <div class="modal-overlay" id="addPlaceModal">
+    <div class="modal-content">
+      <h3>➕ Add Safe Destination</h3>
+      <div class="form-group">
+        <label>Place Name</label>
+        <input type="text" id="newPlaceName" placeholder="e.g. Neighborhood Pharmacy">
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select id="newPlaceCategory">
+          <option value="medical">🏥 Medical / Pharmacy</option>
+          <option value="shop">🛒 Shop / Market</option>
+          <option value="park">🌳 Park / Walkway</option>
+          <option value="home">🏠 Home / Residence</option>
+          <option value="custom">📍 Custom</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Icon Emoji</label>
+        <input type="text" id="newPlaceIcon" value="📍" maxlength="2">
+      </div>
+      <div class="form-group">
+        <label>Latitude</label>
+        <input type="number" step="0.00001" id="newPlaceLat" value="13.14537">
+      </div>
+      <div class="form-group">
+        <label>Longitude</label>
+        <input type="number" step="0.00001" id="newPlaceLng" value="77.61979">
+      </div>
+      <div class="form-group">
+        <label>Safe Arrival Radius (meters)</label>
+        <input type="number" id="newPlaceRadius" value="30">
+      </div>
+      <div class="form-group">
+        <label>Familiar Landmark Cue</label>
+        <input type="text" id="newPlaceCue" placeholder="e.g. Near the main layout entrance arch">
+      </div>
+      <div class="modal-actions">
+        <button class="sim-btn" id="btnCancelAddPlace">Cancel</button>
+        <button class="sim-btn success" id="btnSaveAddPlace">Save Location</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Leaflet -> Three.js -> AR Spatial Engine -> App Modules -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/js/three.min.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/voice.js"></script>
+  <script src="/static/js/camera.js"></script>
+  <script src="/static/js/ar_spatial_engine.js"></script>
+  <script src="/static/js/caregiver.js"></script>
+  <script src="/static/js/navigation.js"></script>
+
+  <script>
+    // Tab Switching Logic (User vs Caretaker)
+    function switchView(view) {
+      document.querySelectorAll('.segment-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.view-container').forEach(v => v.classList.remove('active'));
+
+      if (view === 'elder') {
+        document.getElementById('tabElder').classList.add('active');
+        document.getElementById('tabElder').setAttribute('aria-selected', 'true');
+        document.getElementById('elderView').classList.add('active');
+        setTimeout(() => {
+          if (window.patientNavigation && window.patientNavigation.elderMap) {
+            window.patientNavigation.elderMap.invalidateSize();
+          }
+        }, 100);
+      } else {
+        document.getElementById('tabCaregiver').classList.add('active');
+        document.getElementById('tabCaregiver').setAttribute('aria-selected', 'true');
+        document.getElementById('caregiverView').classList.add('active');
+        setTimeout(() => {
+          if (window.caregiverPortal && window.caregiverPortal.map) {
+            window.caregiverPortal.map.invalidateSize();
+          }
+        }, 100);
+      }
+    }
+
+    // App Initialization on DOM Load
+    document.addEventListener('DOMContentLoaded', () => {
+      window.patientNavigation.init();
+      window.caregiverPortal.init();
+
+      // Register PWA Service Worker for Mobile App Installation
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/static/sw.js').then(reg => {
+          console.log('📱 PWA Service Worker Registered:', reg.scope);
+        }).catch(err => {
+          console.warn('SW registration note:', err);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

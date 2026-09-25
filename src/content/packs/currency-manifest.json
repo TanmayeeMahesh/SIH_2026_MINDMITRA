@@ -1,0 +1,86 @@
+{
+  "_readme": "Real Indian currency photographs for the Market Day numeracy game. Indian banknote and coin DESIGNS are the copyright of the Reserve Bank of India / Government of India. The licenses recorded below apply to the IMAGE FILES as tagged on Wikimedia Commons, not to the underlying currency designs. See public/content/currency/ATTRIBUTION.md before shipping commercially.",
+  "denominations": [
+    {
+      "value": 1,
+      "kind": "coin",
+      "file": "coin-1.jpg",
+      "license": "Government Open Data License - India (GODL-India). Commons template {{GODL-India}}; stated usage terms: \"Government Open Data License - India\". Permits commercial and non-commercial reuse with attribution. Applies to the RBI-published image file only - the coin design itself remains Government of India / RBI copyright.",
+      "source": "https://commons.wikimedia.org/wiki/File:1-rupees-2011-rev.png",
+      "attribution": "Reserve Bank of India, Government of India - via Wikimedia Commons (GODL-India)",
+      "note": "Current rupee-symbol series (2011). Denomination face shown. Commons original is only 126x124px; upscaled to 420px, so it is visibly soft. This is the only current-design 1-rupee denomination face available on Commons."
+    },
+    {
+      "value": 2,
+      "kind": "coin",
+      "file": "coin-2.jpg",
+      "license": "Creative Commons Attribution-Share Alike 4.0 International (CC BY-SA 4.0). Commons template {{Cc-by-sa-4.0}}, uploader's own work. Covers the photograph only - the coin design remains Government of India / RBI copyright. Share-alike obligations attach to reuse of the photograph.",
+      "source": "https://commons.wikimedia.org/wiki/File:Rupees_2_Grain_Series_coin_reverse_.png",
+      "attribution": "Rasalghul1711 - via Wikimedia Commons (CC BY-SA 4.0)",
+      "note": "Current 2019 'grain' series. Denomination face shown. Transparent PNG flattened onto white and converted to JPEG."
+    },
+    {
+      "value": 5,
+      "kind": "coin",
+      "file": "coin-5.jpg",
+      "license": "Creative Commons Attribution-Share Alike 4.0 International (CC BY-SA 4.0). Commons template {{Cc-by-sa-4.0}}, uploader's own work. Covers the photograph only - the coin design remains Government of India / RBI copyright. Share-alike obligations attach to reuse of the photograph.",
+      "source": "https://commons.wikimedia.org/wiki/File:Rupees_5_Grain_Series_coin_reverse.png",
+      "attribution": "Rasalghul1711 - via Wikimedia Commons (CC BY-SA 4.0)",
+      "note": "Current 2019 'grain' series. Denomination face shown. Transparent PNG flattened onto white and converted to JPEG."
+    },
+    {
+      "value": 10,
+      "kind": "coin",
+      "file": "coin-10.jpg",
+      "license": "Creative Commons Attribution-Share Alike 4.0 International (CC BY-SA 4.0). Commons template {{Cc-by-sa-4.0}}, uploader's own work. Covers the photograph only - the coin design remains Government of India / RBI copyright. Share-alike obligations attach to reuse of the photograph.",
+      "source": "https://commons.wikimedia.org/wiki/File:Rupees_10_Grain_Series_coin_Obverse.png",
+      "attribution": "Rasalghul1711 - via Wikimedia Commons (CC BY-SA 4.0)",
+      "note": "Current 2019 bimetallic 'grain' series. Denomination face shown (the Commons file is titled 'Obverse' but actually depicts the numeral face). Transparent PNG flattened onto white and converted to JPEG."
+    },
+    {
+      "value": 10,
+      "kind": "note",
+      "file": "note-10.jpg",
+      "license": "Government Open Data License - India (GODL-India). Commons template {{GODL-India}}; stated usage terms: \"Government Open Data License - India\". Permits commercial and non-commercial reuse with attribution. Applies to the RBI-published image file only - the banknote design itself remains Reserve Bank of India / Government of India copyright.",
+      "source": "https://commons.wikimedia.org/wiki/File:India_new_10_INR,_MG_series,_2018,_obverse.jpg",
+      "attribution": "Reserve Bank of India - via Wikimedia Commons (GODL-India)",
+      "note": "Mahatma Gandhi New Series, 2018. Obverse. RBI specimen image: carries a red SPECIMEN overprint and 000000 serial numbers."
+    },
+    {
+      "value": 20,
+      "kind": "note",
+      "file": "note-20.jpg",
+      "license": "Government Open Data License - India (GODL-India). Commons template {{GODL-India}}; stated usage terms: \"Government Open Data License - India\". Permits commercial and non-commercial reuse with attribution. Applies to the RBI-published image file only - the banknote design itself remains Reserve Bank of India / Government of India copyright.",
+      "source": "https://commons.wikimedia.org/wiki/File:India_new_20_INR,_MG_series,_2019,_obverse.jpg",
+      "attribution": "Reserve Bank of India - via Wikimedia Commons (GODL-India)",
+      "note": "Mahatma Gandhi New Series, 2019. Obverse. From an RBI press release; no SPECIMEN overprint. Commons original is 547x274px, so this is the softest of the five notes."
+    },
+    {
+      "value": 50,
+      "kind": "note",
+      "file": "note-50.jpg",
+      "license": "Government Open Data License - India (GODL-India). Commons template {{GODL-India}}; stated usage terms: \"Government Open Data License - India\". Permits commercial and non-commercial reuse with attribution. Applies to the RBI-published image file only - the banknote design itself remains Reserve Bank of India / Government of India copyright.",
+      "source": "https://commons.wikimedia.org/wiki/File:India_new_50_INR,_MG_series,_2018,_obverse.jpg",
+      "attribution": "Reserve Bank of India - via Wikimedia Commons (GODL-India)",
+      "note": "Mahatma Gandhi New Series, 2018. Obverse. RBI specimen image: carries a red SPECIMEN overprint and 0AA 000000 serial numbers."
+    },
+    {
+      "value": 100,
+      "kind": "note",
+      "file": "note-100.jpg",
+      "license": "Government Open Data License - India (GODL-India). Commons template {{GODL-India}}; stated usage terms: \"Government Open Data License - India\". Permits commercial and non-commercial reuse with attribution. Applies to the RBI-published image file only - the banknote design itself remains Reserve Bank of India / Government of India copyright.",
+      "source": "https://commons.wikimedia.org/wiki/File:India_new_100_INR,_Mahatma_Gandhi_New_Series,_2018,_obverse.png",
+      "attribution": "Reserve Bank of India - via Wikimedia Commons (GODL-India)",
+      "note": "Mahatma Gandhi New Series, 2018. Obverse. RBI specimen image: carries a red SPECIMEN overprint and 000000 serial numbers. Commons original is PNG; converted to JPEG here."
+    },
+    {
+      "value": 500,
+      "kind": "note",
+      "file": "note-500.jpg",
+      "license": "Government Open Data License - India (GODL-India). Commons template {{GODL-India}}; stated usage terms: \"Government Open Data License - India\". Permits commercial and non-commercial reuse with attribution. Applies to the RBI-published image file only - the banknote design itself remains Reserve Bank of India / Government of India copyright.",
+      "source": "https://commons.wikimedia.org/wiki/File:India_new_500_INR,_MG_series,_2016,_obverse.jpg",
+      "attribution": "Reserve Bank of India - via Wikimedia Commons (GODL-India)",
+      "note": "Mahatma Gandhi New Series, 2016 (post-demonetisation design). Obverse. RBI specimen image: carries a red SPECIMEN overprint and 0AA 000000 serial numbers."
+    }
+  ]
+}

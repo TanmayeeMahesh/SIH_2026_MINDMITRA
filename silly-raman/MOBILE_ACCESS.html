@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMitra — Mobile Access & QR Code</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #FBF1E3;
+      color: #332F29;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: #EEE1CC;
+      border: 2px solid #8FA17A;
+      border-radius: 24px;
+      padding: 32px 24px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(51, 47, 41, 0.15);
+    }
+    .qr-frame {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 20px 0;
+      box-shadow: 0 4px 20px rgba(143, 161, 122, 0.3);
+      border: 2px solid #D8B878;
+    }
+    .qr-frame img {
+      display: block;
+      width: 240px;
+      height: 240px;
+    }
+    .url-badge {
+      background: #5E6F4A;
+      border: 1px solid #8FA17A;
+      color: #FBF1E3;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      word-break: break-all;
+      display: block;
+      text-decoration: none;
+      margin: 12px 0;
+      box-shadow: 0 3px 10px rgba(94, 111, 74, 0.3);
+    }
+    .url-badge:hover {
+      background: #8FA17A;
+      color: #FBF1E3;
+    }
+    .tip {
+      font-size: 13px;
+      color: #6B6B63;
+      line-height: 1.5;
+      margin-top: 14px;
+    }
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .pill {
+      background: rgba(143, 161, 122, 0.2);
+      border: 1px solid #8FA17A;
+      color: #5E6F4A;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div style="font-size: 40px; margin-bottom: 8px;">🛰️📱</div>
+    <h2 style="font-size: 22px; font-weight: 800; color: #332F29;">Open MindMitra on Mobile</h2>
+    <p style="color: #6B6B63; font-size: 14px; margin-top: 4px;">
+      Scan this QR code with your phone camera to test live navigation:
+    </p>
+
+    <div class="qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://fork-road-dynamic-vids.trycloudflare.com" alt="Scan QR Code to open on mobile" />
+    </div>
+
+    <a href="https://fork-road-dynamic-vids.trycloudflare.com" class="url-badge" target="_blank">
+      https://fork-road-dynamic-vids.trycloudflare.com
+    </a>
+
+    <div class="features">
+      <span class="pill">📷 Live Camera</span>
+      <span class="pill">🛰️ Real-Time GPS</span>
+      <span class="pill">📲 Installable PWA</span>
+    </div>
+
+    <div class="tip">
+      <strong>✨ Pro Tip:</strong> In Chrome or Safari on your phone, tap <strong>"Add to Home Screen"</strong> to install MindMitra as a standalone app!
+    </div>
+  </div>
+</body>
+</html>

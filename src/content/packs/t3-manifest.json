@@ -1,0 +1,388 @@
+{
+  "objects": [
+    {
+      "id": "t3-obj-cup",
+      "name": "a cup",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "cup.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Vintage_brass_lota_1.jpg",
+      "attribution": "Photo by Rajani Gairshail, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-pot",
+      "name": "a cooking pot",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "pot.jpg",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Handi_1.JPG",
+      "attribution": "Public domain (CC0), by Miansari66, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-kettle",
+      "name": "a kettle",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "kettle.jpg",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Yakan.JPG",
+      "attribution": "Public domain, by GATARO, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-plate",
+      "name": "a plate",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "plate.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Gujarati_Thali_1.jpg",
+      "attribution": "Photo by Amol Sinha, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-spoon",
+      "name": "a spoon",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "spoon.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Spoon.jpg",
+      "attribution": "Photo by DIVYALAKSHWIN, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-broom",
+      "name": "a broom",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "broom.jpg",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:A_bunch_of_traditional_brooms.jpg",
+      "attribution": "Public domain (CC0), by Jay Superthato, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-umbrella",
+      "name": "an umbrella",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "umbrella.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Czarny_parasol_-_15.05.2024.jpg",
+      "attribution": "Photo by Aw58, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-fan",
+      "name": "a hand fan",
+      "kind": "object",
+      "group": "kitchen",
+      "file": "fan.jpg",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fan,_folding_(AM_2003.15.2-2).jpg",
+      "attribution": "Auckland Museum, CC BY 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-banana",
+      "name": "a banana",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "banana.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Maturing_bunch_of_bananas.jpg",
+      "attribution": "Photo by Ceentia, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-potato",
+      "name": "a potato",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "potato.jpg",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Wicker_basket_of_potatoes.jpg",
+      "attribution": "Photo by Dezidor, CC BY 3.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-onion",
+      "name": "an onion",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "onion.jpg",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Red_Onion_on_White.JPG",
+      "attribution": "Photo by Colin, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-tomato",
+      "name": "a tomato",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "tomato.jpg",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tomato_je.jpg",
+      "attribution": "Photo by Softeis, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-brinjal",
+      "name": "a brinjal",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "brinjal.jpg",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Brinjal..JPG",
+      "attribution": "Public domain (CC0), by Miansari66, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-pumpkin",
+      "name": "a pumpkin",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "pumpkin.jpg",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pumpkin_stack_closeup.jpg",
+      "attribution": "Public domain (CC0), by Jeffery Martin, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-mango",
+      "name": "a mango",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "mango.jpg",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:MangoAlphonso04_Asit.jpg",
+      "attribution": "Photo by Asit K. Ghosh, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-papaya",
+      "name": "a papaya",
+      "kind": "object",
+      "group": "vegetable",
+      "file": "papaya.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Papaya_fruit_hanging_from_the_tree.jpg",
+      "attribution": "Photo by Anak Sago, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-gamosa",
+      "name": "a gamosa",
+      "kind": "object",
+      "group": "cultural",
+      "file": "gamosa.jpg",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Gamosa.jpg",
+      "attribution": "Public domain, by Priyankoo (en.wikipedia), via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-dhol",
+      "name": "a dhol",
+      "kind": "object",
+      "group": "cultural",
+      "file": "dhol.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dhol_Musical_instrument.jpg",
+      "attribution": "Photo by Anushkasen0408, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-jaapi",
+      "name": "a jaapi",
+      "kind": "object",
+      "group": "cultural",
+      "file": "jaapi.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Assamese_Jaapi.jpg",
+      "attribution": "Photo by Salil Kumar Mukherjee, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-diya",
+      "name": "a diya",
+      "kind": "object",
+      "group": "cultural",
+      "file": "diya.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Diya_Lamp.jpg",
+      "attribution": "Photo by Ara Basu, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-pitha",
+      "name": "a pitha",
+      "kind": "object",
+      "group": "cultural",
+      "file": "pitha.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Assamese_style_steamed_rice_flour_cake.jpg",
+      "attribution": "Photo by Ajay Das, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-handloom",
+      "name": "a handloom shawl",
+      "kind": "object",
+      "group": "cultural",
+      "file": "handloom.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Assam_Muga_Silk_Sador_Mekhela.jpg",
+      "attribution": "Photo by Papori Bora, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-spintop",
+      "name": "a spinning top",
+      "kind": "object",
+      "group": "toy",
+      "file": "spintop.jpg",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Spinning_top.jpg",
+      "attribution": "Public domain, uploaded by Lacen, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-kite",
+      "name": "a kite",
+      "kind": "object",
+      "group": "toy",
+      "file": "kite.jpg",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Flying_Kite.jpg",
+      "attribution": "Public domain (CC0), by Manju Thilagavathi, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-woodtoy",
+      "name": "a toy",
+      "kind": "object",
+      "group": "toy",
+      "file": "woodtoy.jpg",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Toy_animal_(AM_72307-1).jpg",
+      "attribution": "Auckland Museum, CC BY 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-obj-rattle",
+      "name": "a rattle",
+      "kind": "object",
+      "group": "toy",
+      "file": "rattle.jpg",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sonajero.JPG",
+      "attribution": "Photo by Calapito, CC BY 3.0, via Wikimedia Commons"
+    }
+  ],
+  "places": [
+    {
+      "id": "t3-place-market",
+      "name": "the market",
+      "kind": "place",
+      "group": "place",
+      "file": "market.jpg",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ima_Market,_imphal.jpeg",
+      "attribution": "Photo by PP Yoonus, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-place-temple",
+      "name": "the temple",
+      "kind": "place",
+      "group": "place",
+      "file": "temple.jpg",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:A_900_year_old_Temple_in_South_India,_Full_Courtyard_View.jpg",
+      "attribution": "Photo by Hari K Patibanda, CC BY 2.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-place-kitchen",
+      "name": "the kitchen",
+      "kind": "place",
+      "group": "place",
+      "file": "kitchen.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Grandmother_preparing_food_inside_traditional_kitchen_(edited).jpg",
+      "attribution": "Photo by Mithun Kunwar (edited by Radomianin), CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-place-field",
+      "name": "the road to the field",
+      "kind": "place",
+      "group": "place",
+      "file": "field.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Road_through_paddy_fields_in_rural_Haryana,_India.jpg",
+      "attribution": "Photo by UnpetitproleX, CC BY-SA 4.0, via Wikimedia Commons"
+    }
+  ],
+  "steps": [
+    {
+      "id": "t3-step-tea-boil",
+      "name": "boiling water",
+      "kind": "step",
+      "group": "t3-r-tea",
+      "file": "step-tea-boil.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Boilingkettle.jpg",
+      "attribution": "Photo by Plorpy2, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-step-tea-leaves",
+      "name": "adding tea leaves",
+      "kind": "step",
+      "group": "t3-r-tea",
+      "file": "step-tea-leaves.jpg",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:CTC_tea.jpg",
+      "attribution": "Photo by Naresh.limbu (English Wikipedia), CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-step-tea-milk",
+      "name": "adding milk",
+      "kind": "step",
+      "group": "t3-r-tea",
+      "file": "step-tea-milk.jpg",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Indian_tea_with_milk.jpg",
+      "attribution": "Photo by richardmasoner, CC BY-SA 2.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-step-tea-pour",
+      "name": "pouring tea into the cup",
+      "kind": "step",
+      "group": "t3-r-tea",
+      "file": "step-tea-pour.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:A_cup_of_red_tea_pouring_from_a_tea_pot_(%E0%A6%9A%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0_%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A7%8D%E0%A6%B0_%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87_%E0%A6%8F%E0%A6%95%E0%A6%9F%E0%A6%BF_%E0%A6%95%E0%A6%BE%E0%A6%AA%E0%A7%87_%E0%A6%A2%E0%A6%BE%E0%A6%B2%E0%A6%BE_%E0%A6%B2%E0%A6%BE%E0%A6%B2_%E0%A6%9A%E0%A6%BE).jpg",
+      "attribution": "Photo by HridoyKundu, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-step-ready-comb",
+      "name": "combing hair",
+      "kind": "step",
+      "group": "t3-r-ready",
+      "file": "step-ready-comb.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Combing_Afro_hair_01.jpg",
+      "attribution": "Photo by Adesolive, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-step-ready-shawl",
+      "name": "wearing the shawl",
+      "kind": "step",
+      "group": "t3-r-ready",
+      "file": "step-ready-shawl.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Shawl3.jpg",
+      "attribution": "Photo by Great-ys, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-step-ready-sandals",
+      "name": "wearing sandals",
+      "kind": "step",
+      "group": "t3-r-ready",
+      "file": "step-ready-sandals.jpg",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kolhapur_chappal.jpg",
+      "attribution": "Public domain (CC0), by prashant, via Wikimedia Commons"
+    },
+    {
+      "id": "t3-step-ready-umbrella",
+      "name": "taking the umbrella",
+      "kind": "step",
+      "group": "t3-r-ready",
+      "file": "step-ready-umbrella.jpg",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Czarna_parasolka_-_15.05.2024.jpg",
+      "attribution": "Photo by Aw58, CC BY-SA 4.0, via Wikimedia Commons"
+    }
+  ]
+}

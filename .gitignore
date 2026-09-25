@@ -1,0 +1,37 @@
+# secrets — never commit
+.env
+.env.local
+.env.*.local
+*.key
+
+# dependencies / build output
+node_modules/
+dist/
+dist-ssr/
+.vite/
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# local tool config (not shared across the team)
+.claude/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# logs
+*.log
+npm-debug.log*
+
+# runtime data / large binaries from the teammate prototype folder (silly-raman/)
+silly-raman/backend/*.db
+silly-raman/cloudflared.exe
